@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/3D-loft-apartment/static/css/main.a61a31f2.css",
-    "main.js": "/3D-loft-apartment/static/js/main.3e9e6363.js",
+    "main.js": "/3D-loft-apartment/static/js/main.7d5ad4c4.js",
     "static/js/787.fdba64ea.chunk.js": "/3D-loft-apartment/static/js/787.fdba64ea.chunk.js",
     "static/media/workspace.glb": "/3D-loft-apartment/static/media/workspace.e6caadc2bb44776d6ffb.glb",
     "static/media/building.png": "/3D-loft-apartment/static/media/building.2151a3f3ca12d0ac7934.png",
@@ -16,11 +16,11 @@
     "static/media/screens.glb": "/3D-loft-apartment/static/media/screens.7ef797372a5b0f93361e.glb",
     "index.html": "/3D-loft-apartment/index.html",
     "main.a61a31f2.css.map": "/3D-loft-apartment/static/css/main.a61a31f2.css.map",
-    "main.3e9e6363.js.map": "/3D-loft-apartment/static/js/main.3e9e6363.js.map",
+    "main.7d5ad4c4.js.map": "/3D-loft-apartment/static/js/main.7d5ad4c4.js.map",
     "787.fdba64ea.chunk.js.map": "/3D-loft-apartment/static/js/787.fdba64ea.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a61a31f2.css",
-    "static/js/main.3e9e6363.js"
+    "static/js/main.7d5ad4c4.js"
   ]
 }
