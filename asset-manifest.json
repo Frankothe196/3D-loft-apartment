@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.a61a31f2.css",
-    "main.js": "/static/js/main.d5083626.js",
-    "static/js/787.fdba64ea.chunk.js": "/static/js/787.fdba64ea.chunk.js",
-    "static/media/workspace.glb": "/static/media/workspace.e6caadc2bb44776d6ffb.glb",
-    "static/media/building.png": "/static/media/building.2151a3f3ca12d0ac7934.png",
-    "static/media/bedroom.glb": "/static/media/bedroom.fd40ca99e195ff4381af.glb",
-    "static/media/bedroom.png": "/static/media/bedroom.2618ad558ee4ffa2171b.png",
-    "static/media/sitting.glb": "/static/media/sitting.6868cc135b90fca5809c.glb",
-    "static/media/laptop.png": "/static/media/laptop.3a395f0a3391cc7afbd4.png",
-    "static/media/sitting.png": "/static/media/sitting.f136f2b2abb955a7c1e4.png",
-    "static/media/workspace.png": "/static/media/workspace.4b16aa653fe818698b40.png",
-    "static/media/building.glb": "/static/media/building.8d3db20b38970c8d8453.glb",
-    "static/media/laptop.glb": "/static/media/laptop.c85cc4c570884d24bac4.glb",
-    "static/media/screens.glb": "/static/media/screens.7ef797372a5b0f93361e.glb",
-    "index.html": "/index.html",
-    "main.a61a31f2.css.map": "/static/css/main.a61a31f2.css.map",
-    "main.d5083626.js.map": "/static/js/main.d5083626.js.map",
-    "787.fdba64ea.chunk.js.map": "/static/js/787.fdba64ea.chunk.js.map"
+    "main.css": "/3D-loft-apartment/static/css/main.a61a31f2.css",
+    "main.js": "/3D-loft-apartment/static/js/main.3e9e6363.js",
+    "static/js/787.fdba64ea.chunk.js": "/3D-loft-apartment/static/js/787.fdba64ea.chunk.js",
+    "static/media/workspace.glb": "/3D-loft-apartment/static/media/workspace.e6caadc2bb44776d6ffb.glb",
+    "static/media/building.png": "/3D-loft-apartment/static/media/building.2151a3f3ca12d0ac7934.png",
+    "static/media/bedroom.glb": "/3D-loft-apartment/static/media/bedroom.fd40ca99e195ff4381af.glb",
+    "static/media/bedroom.png": "/3D-loft-apartment/static/media/bedroom.2618ad558ee4ffa2171b.png",
+    "static/media/sitting.glb": "/3D-loft-apartment/static/media/sitting.6868cc135b90fca5809c.glb",
+    "static/media/laptop.png": "/3D-loft-apartment/static/media/laptop.3a395f0a3391cc7afbd4.png",
+    "static/media/sitting.png": "/3D-loft-apartment/static/media/sitting.f136f2b2abb955a7c1e4.png",
+    "static/media/workspace.png": "/3D-loft-apartment/static/media/workspace.4b16aa653fe818698b40.png",
+    "static/media/building.glb": "/3D-loft-apartment/static/media/building.8d3db20b38970c8d8453.glb",
+    "static/media/laptop.glb": "/3D-loft-apartment/static/media/laptop.c85cc4c570884d24bac4.glb",
+    "static/media/screens.glb": "/3D-loft-apartment/static/media/screens.7ef797372a5b0f93361e.glb",
+    "index.html": "/3D-loft-apartment/index.html",
+    "main.a61a31f2.css.map": "/3D-loft-apartment/static/css/main.a61a31f2.css.map",
+    "main.3e9e6363.js.map": "/3D-loft-apartment/static/js/main.3e9e6363.js.map",
+    "787.fdba64ea.chunk.js.map": "/3D-loft-apartment/static/js/787.fdba64ea.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a61a31f2.css",
-    "static/js/main.d5083626.js"
+    "static/js/main.3e9e6363.js"
   ]
 }
