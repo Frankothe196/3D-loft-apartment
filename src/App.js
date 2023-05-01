@@ -78,7 +78,7 @@ const canvasStyle = {
 
 function App() {
   return (
-    <Canvas style={canvasStyle} camera={{fov:80}}>
+    <Canvas style={canvasStyle} camera={{fov:80, position:[5,5,7]}}>
       <OrbitControls/>
       <Grid/>
       <gridHelper/>
