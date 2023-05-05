@@ -4,6 +4,8 @@ import * as THREE from 'three';
 import { Canvas } from '@react-three/fiber';
 import { Grid, Html, OrbitControls, useGLTF, useTexture } from '@react-three/drei';
 
+import worldGLTF from './assets/models/background.glb';
+import hiddingFrameGLTF from './assets/models/hiddingFrame.glb';
 import laptopGLTF from './assets/models/laptop.glb';
 import laptopTexture from './assets/textures/laptop.png';
 import buildingGLTF  from './assets/models/building.glb';
@@ -33,18 +35,78 @@ function LoadModels({model,texture}){
 
   var modelTexture = new THREE.TextureLoader().load(texture)
   modelTexture.flipY = false
+  // console.log(nodes)
+
+  const Meshes = () => {
+    let MeshArr= []
+    var prop;
+    for(prop in nodes){
+      // console.log(prop)
+      if(prop!='Scene'){
+        MeshArr.push(
+          <mesh geometry={nodes[prop].geometry}>
+            <meshBasicMaterial map={modelTexture} attach="material"/>
+          </mesh>
+        )
+      }
+      }
+      return MeshArr
+  }
+      
+  return(
+    <>
+      <Meshes/>
+    </>
+  )
+}
+
+function LoadHidden(){
+  const hidden = useGLTF(hiddingFrameGLTF)
 
   return(
-    <mesh geometry={nodes.Mesh.geometry}>
-      <meshBasicMaterial map={modelTexture} attach="material"/>
-    </mesh>
-  )
+    <>
+      <primitive object={hidden.scene}/>
+    </>
+  )  
+}
+
+function LoadWorld(){
+  const {nodes} = useGLTF(worldGLTF)
+
+  console.log(nodes)
+
+  return(
+    <group>
+
+      <mesh geometry={nodes.Cube003.geometry}>
+        <meshBasicMaterial color="blue"/>
+      </mesh>
+      <mesh geometry={nodes.Sphere.geometry}>
+        <meshBasicMaterial color="red"/>
+      </mesh>
+      <mesh geometry={nodes.Sphere001.geometry}>
+        <meshBasicMaterial color="red"/>
+      </mesh>
+      <mesh geometry={nodes.Sphere002.geometry}>
+        <meshBasicMaterial color="red"/>
+      </mesh>
+      <mesh geometry={nodes.Sphere003.geometry}>
+        <meshBasicMaterial color="red"/>
+      </mesh>
+      <mesh geometry={nodes.Sphere005.geometry}>
+        <meshBasicMaterial color="red"/>
+      </mesh>
+      <mesh geometry={nodes.Sphere006.geometry}>
+        <meshBasicMaterial color="red"/>
+      </mesh>
+    </group>
+  )  
 }
 
 function LoadScreens (){
   const {nodes} = useGLTF(screens)
 
-  console.log(nodes)
+  // console.log(nodes)
   
   return(
     <group>
@@ -78,7 +140,8 @@ const canvasStyle = {
 
 function App() {
   return (
-    <Canvas style={canvasStyle} camera={{fov:80, position:[5,5,7]}}>
+    <Canvas style={canvasStyle} camera={{fov:80, near:0.1, far:1000, position:[5,5,7]}}>
+      <ambientLight intensity={0.5} />
       <OrbitControls/>
       <Grid/>
       <gridHelper/>
@@ -86,6 +149,8 @@ function App() {
         <LoadModels model={item.model} texture={item.texture}/>
       ))}
       <LoadScreens/>
+      <LoadHidden/>
+      <LoadWorld/>
     </Canvas>
   );
 }
