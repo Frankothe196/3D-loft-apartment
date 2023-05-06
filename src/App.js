@@ -3,6 +3,7 @@ import './App.css';
 import * as THREE from 'three';
 import { Canvas } from '@react-three/fiber';
 import { Grid, Html, OrbitControls, useGLTF, useTexture } from '@react-three/drei';
+import { Bloom, DepthOfField, EffectComposer, Noise, Vignette } from '@react-three/postprocessing'
 
 import worldGLTF from './assets/models/background.glb';
 import hiddingFrameGLTF from './assets/models/hiddingFrame.glb';
@@ -79,25 +80,25 @@ function LoadWorld(){
     <group>
 
       <mesh geometry={nodes.Cube003.geometry}>
-        <meshBasicMaterial color="blue"/>
+        <meshBasicMaterial color="#07052A"/>
       </mesh>
       <mesh geometry={nodes.Sphere.geometry}>
         <meshBasicMaterial color="red"/>
       </mesh>
       <mesh geometry={nodes.Sphere001.geometry}>
-        <meshBasicMaterial color="red"/>
+        <meshBasicMaterial color="#210BC3"/>
       </mesh>
       <mesh geometry={nodes.Sphere002.geometry}>
-        <meshBasicMaterial color="red"/>
+        <meshBasicMaterial color="#FC9601"/>
       </mesh>
       <mesh geometry={nodes.Sphere003.geometry}>
-        <meshBasicMaterial color="red"/>
+        <meshBasicMaterial color="orange"/>
       </mesh>
       <mesh geometry={nodes.Sphere005.geometry}>
-        <meshBasicMaterial color="red"/>
+        <meshBasicMaterial color="white"/>
       </mesh>
       <mesh geometry={nodes.Sphere006.geometry}>
-        <meshBasicMaterial color="red"/>
+        <meshBasicMaterial color="violet"/>
       </mesh>
     </group>
   )  
@@ -140,9 +141,20 @@ const canvasStyle = {
 
 function App() {
   return (
-    <Canvas style={canvasStyle} camera={{fov:80, near:0.1, far:1000, position:[5,5,7]}}>
+    <Canvas style={canvasStyle} camera={{fov:80, near:0.1, far:1000, position:[5,7,5]}}>
+      <EffectComposer>
+        {/*<DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />*/}
+        <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
+        <Noise opacity={0.02} />
+        <Vignette eskil={false} offset={0.1} darkness={1.1} />
+      </EffectComposer>
       <ambientLight intensity={0.5} />
-      <OrbitControls/>
+      <OrbitControls
+	 minAzimuthAngle={Math.PI - Math.PI / 1.15}
+  	 maxAzimuthAngle={Math.PI - Math.PI /1.7}
+  	 minPolarAngle={Math.PI / 6}
+  	 maxPolarAngle={Math.PI / 2.2}	
+	/>
       <Grid/>
       <gridHelper/>
       {modelsData.map(item=>(
