@@ -46,7 +46,7 @@ function LoadModels({model,texture}){
       if(prop!='Scene'){
         MeshArr.push(
           <mesh geometry={nodes[prop].geometry}>
-            <meshBasicMaterial map={modelTexture} attach="material"/>
+            <meshStandardMaterial map={modelTexture}/>
           </mesh>
         )
       }
@@ -141,28 +141,31 @@ const canvasStyle = {
 
 function App() {
   return (
-    <Canvas style={canvasStyle} camera={{fov:80, near:0.1, far:1000, position:[5,7,5]}}>
+    <Canvas style={canvasStyle} camera={{fov:80, near:0.1, far:10000, position:[5,7,5]}}>
       <EffectComposer>
         {/*<DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />*/}
         <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
         <Noise opacity={0.02} />
         <Vignette eskil={false} offset={0.1} darkness={1.1} />
       </EffectComposer>
-      <ambientLight intensity={0.5} />
+
       <OrbitControls
-	 minAzimuthAngle={Math.PI - Math.PI / 1.15}
-  	 maxAzimuthAngle={Math.PI - Math.PI /1.7}
-  	 minPolarAngle={Math.PI / 6}
-  	 maxPolarAngle={Math.PI / 2.2}	
-	/>
+        minAzimuthAngle={Math.PI - Math.PI / 1.15}
+        maxAzimuthAngle={Math.PI - Math.PI /1.7}
+        minPolarAngle={Math.PI / 6}
+        maxPolarAngle={Math.PI / 2.2}	
+      />
       <Grid/>
       <gridHelper/>
       {modelsData.map(item=>(
         <LoadModels model={item.model} texture={item.texture}/>
-      ))}
+        ))}
       <LoadScreens/>
       <LoadHidden/>
       <LoadWorld/>
+      {/* <pointLight position={[0, 20, 10]} intensity={1.5} /> */}
+      <ambientLight intensity={4}/>
+      
     </Canvas>
   );
 }
