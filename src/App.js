@@ -83,22 +83,22 @@ function LoadWorld(){
         <meshBasicMaterial color="#07052A"/>
       </mesh>
       <mesh geometry={nodes.Sphere.geometry}>
-        <meshBasicMaterial color="red"/>
+        <meshBasicMaterial color="#ADD8E6"/>
       </mesh>
       <mesh geometry={nodes.Sphere001.geometry}>
-        <meshBasicMaterial color="#210BC3"/>
-      </mesh>
-      <mesh geometry={nodes.Sphere002.geometry}>
         <meshBasicMaterial color="#FC9601"/>
       </mesh>
+      <mesh geometry={nodes.Sphere002.geometry}>
+        <meshBasicMaterial color="#3342BF"/>
+      </mesh>
       <mesh geometry={nodes.Sphere003.geometry}>
-        <meshBasicMaterial color="orange"/>
+        <meshBasicMaterial color="red"/>
       </mesh>
       <mesh geometry={nodes.Sphere005.geometry}>
         <meshBasicMaterial color="white"/>
       </mesh>
       <mesh geometry={nodes.Sphere006.geometry}>
-        <meshBasicMaterial color="violet"/>
+        <meshBasicMaterial color="red"/>
       </mesh>
     </group>
   )  
@@ -154,7 +154,8 @@ function App() {
         maxAzimuthAngle={Math.PI - Math.PI /1.7}
         minPolarAngle={Math.PI / 6}
         maxPolarAngle={Math.PI / 2.2}	
-      />
+      	maxDistance={10}
+	  />
       <Grid/>
       <gridHelper/>
       {modelsData.map(item=>(
