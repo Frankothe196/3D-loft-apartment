@@ -18,6 +18,8 @@ import sittingTexture from './assets/textures/sitting.png';
 import bedroomGLTF  from './assets/models/bedroom.glb';
 import bedroomTexture from './assets/textures/bedroom.png';
 
+import mobileScreenTexture from './assets/textures/screen/mobile.jpg'
+
 import screens from './assets/models/screens.glb'
 
 const modelsData = [
@@ -107,7 +109,7 @@ function LoadWorld(){
 function LoadScreens (){
   const {nodes} = useGLTF(screens)
 
-  // console.log(nodes)
+  console.log(nodes)
   
   return(
     <group>
@@ -118,7 +120,7 @@ function LoadScreens (){
         <meshBasicMaterial color="red"/>
       </mesh>
       <mesh geometry={nodes.Cube014.geometry}>
-        <meshBasicMaterial color="red"/>
+        <meshStandardMaterial color="red"/>
       </mesh>
       <mesh geometry={nodes.Plane007.geometry}>
         <meshBasicMaterial color="red"/>
@@ -155,7 +157,7 @@ function App() {
         minPolarAngle={Math.PI / 6}
         maxPolarAngle={Math.PI / 2.2}	
       	maxDistance={10}
-	  />
+	    />
       <Grid/>
       <gridHelper/>
       {modelsData.map(item=>(
