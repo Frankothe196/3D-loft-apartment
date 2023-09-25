@@ -183,7 +183,7 @@ function App() {
       <LoadHidden/>
       <LoadWorld/>
       {/* <pointLight position={[0, 20, 10]} intensity={1.5} /> */}
-      <ambientLight intensity={14.5}/>
+      <ambientLight intensity={5}/>
       
     </Canvas>
   );
