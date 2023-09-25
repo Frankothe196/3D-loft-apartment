@@ -18,9 +18,13 @@ import sittingTexture from './assets/textures/sitting.png';
 import bedroomGLTF  from './assets/models/bedroom.glb';
 import bedroomTexture from './assets/textures/bedroom.png';
 
+import screens from './assets/models/screens.glb'
+
+import laptopScreenTexture from './assets/textures/screen/laptop.png'
+import tvScreenTexture from './assets/textures/screen/tv.png'
+import monitorScreenTexture from './assets/textures/screen/monitor.png'
 import mobileScreenTexture from './assets/textures/screen/mobile.jpg'
 
-import screens from './assets/models/screens.glb'
 
 const modelsData = [
   {model:laptopGLTF, texture:laptopTexture},
@@ -78,6 +82,8 @@ function LoadWorld(){
 
   console.log(nodes)
 
+
+
   return(
     <group>
 
@@ -110,23 +116,33 @@ function LoadScreens (){
   const {nodes} = useGLTF(screens)
 
   console.log(nodes)
+
+  let tvTexture = new THREE.TextureLoader().load(tvScreenTexture)
+  tvTexture.flipY = false
+  let mobileTexture = new THREE.TextureLoader().load(mobileScreenTexture)
+  mobileTexture.flipY = false
+  let monitorTexture = new THREE.TextureLoader().load(monitorScreenTexture)
+  monitorTexture.flipY = false
+  let laptopTexture = new THREE.TextureLoader().load(laptopScreenTexture)
+  laptopTexture.flipY = false
+
   
   return(
     <group>
       <mesh geometry={nodes.Plane005.geometry}>
-        <meshBasicMaterial color="red"/>
+        <meshStandardMaterial map={tvTexture}/> {/* TV */}
       </mesh>
       <mesh geometry={nodes.Cube005.geometry}>
-        <meshBasicMaterial color="red"/>
+        <meshStandardMaterial map={laptopTexture}/> {/* Laptop */}
       </mesh>
       <mesh geometry={nodes.Cube014.geometry}>
-        <meshStandardMaterial color="red"/>
+        <meshStandardMaterial map={monitorTexture}/> {/* Monitor */}
       </mesh>
       <mesh geometry={nodes.Plane007.geometry}>
-        <meshBasicMaterial color="red"/>
+        <meshStandardMaterial map={mobileTexture}/> {/* Mobile */}
       </mesh>
       <mesh geometry={nodes.Cylinder006.geometry}>
-        <meshBasicMaterial color="red"/>
+        <meshStandardMaterial color="blue"/> {/* PSP */}
       </mesh>
     </group>
     
