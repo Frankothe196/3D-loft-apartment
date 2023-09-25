@@ -142,7 +142,7 @@ function LoadScreens (){
         <meshStandardMaterial map={mobileTexture}/> {/* Mobile */}
       </mesh>
       <mesh geometry={nodes.Cylinder006.geometry}>
-        <meshStandardMaterial color="blue"/> {/* PSP */}
+        <meshStandardMaterial color="white"/> {/* PSP */}
       </mesh>
     </group>
     
@@ -161,8 +161,8 @@ function App() {
   return (
     <Canvas style={canvasStyle} camera={{fov:80, near:0.1, far:10000, position:[5,7,5]}}>
       <EffectComposer>
-        {/*<DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />*/}
-        <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
+        <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
+        <Bloom luminanceThreshold={0.9} luminanceSmoothing={1} height={300} />
         <Noise opacity={0.02} />
         <Vignette eskil={false} offset={0.1} darkness={1.1} />
       </EffectComposer>
@@ -183,7 +183,7 @@ function App() {
       <LoadHidden/>
       <LoadWorld/>
       {/* <pointLight position={[0, 20, 10]} intensity={1.5} /> */}
-      <ambientLight intensity={4}/>
+      <ambientLight intensity={14.5}/>
       
     </Canvas>
   );
